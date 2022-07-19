@@ -22,10 +22,17 @@ foreach(string name in query1)
     // on the second iteration Jimmy does not end with an M
 }
 
+// First example of NameLongerThanFour method 
 //var query = names.Where(
 //    new Func<string, bool>(NameLongerThanFour));
 
-var query = names.Where(NameLongerThanFour);
+// Second example of NameLongerThanFour method 
+//var query = names.Where(NameLongerThanFour);
+
+// SIMPLEST and Third example of NameLongerThanFour method 
+var query = names
+    .Where(name => name.Length > 4)
+    .OrderBy(name => name.Length);
 
     foreach(string item in query)
 {
@@ -36,3 +43,4 @@ static bool NameLongerThanFour(string name)
 {
     return name.Length > 4;
 }
+
