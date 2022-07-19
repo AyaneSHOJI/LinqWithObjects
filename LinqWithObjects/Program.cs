@@ -22,8 +22,10 @@ foreach(string name in query1)
     // on the second iteration Jimmy does not end with an M
 }
 
-var query = names.Where(
-    new Func<string, bool>(NameLongerThanFour));
+//var query = names.Where(
+//    new Func<string, bool>(NameLongerThanFour));
+
+var query = names.Where(NameLongerThanFour);
 
     foreach(string item in query)
 {
