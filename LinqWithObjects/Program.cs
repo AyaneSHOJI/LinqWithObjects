@@ -21,3 +21,16 @@ foreach(string name in query1)
     names[2] = "Jimmy"; //change Jim to Jimmy
     // on the second iteration Jimmy does not end with an M
 }
+
+var query = names.Where(
+    new Func<string, bool>(NameLongerThanFour));
+
+    foreach(string item in query)
+{
+    WriteLine(item);
+}
+
+static bool NameLongerThanFour(string name)
+{
+    return name.Length > 4;
+}
