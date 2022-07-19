@@ -45,3 +45,24 @@ static bool NameLongerThanFour(string name)
     return name.Length > 4;
 }
 
+WriteLine("Filtering by type");
+
+List<Exception> exceptions = new()
+{
+    new ArgumentException(),
+    new SystemException(),
+    new IndexOutOfRangeException(),
+    new NullReferenceException(),
+    new InvalidCastException(),
+    new OverflowException(),
+    new DivideByZeroException(),
+    new ApplicationException()
+};
+
+IEnumerable<ArithmeticException> arithmeticExceptionsQuery =
+    exceptions.OfType<ArithmeticException>();
+
+foreach(ArithmeticException exception in arithmeticExceptionsQuery)
+{
+    WriteLine(exception);
+}
